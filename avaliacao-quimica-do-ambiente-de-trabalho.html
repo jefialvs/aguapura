@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação Química do Ambiente de Trabalho | Água Pura Soluções Ambientais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --azul-profundo: #6A1B9A;  /* Roxo */
+            --verde-esmeralda: #9C27B0; /* Roxo claro */
+            --gradiente-azul: linear-gradient(135deg, #6A1B9A 0%, #9C27B0 100%);
+            --sombra-card: 0 10px 30px rgba(106, 27, 154, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        .service-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero do Serviço */
+        .service-hero {
+            background: var(--gradiente-azul);
+            color: white;
+            padding: 60px 0;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 50px;
+        }
+        
+        .service-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .service-subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            opacity: 0.9;
+        }
+        
+        /* Conteúdo Principal */
+        .service-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .service-details h2 {
+            font-size: 1.8rem;
+            color: var(--azul-profundo);
+            margin: 30px 0 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .service-details h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--verde-esmeralda);
+            border-radius: 2px;
+        }
+        
+        .feature-list {
+            margin: 25px 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        
+        .feature-icon {
+            color: var(--verde-esmeralda);
+            font-size: 1.3rem;
+            margin-top: 3px;
+        }
+        
+        /* Sidebar de Contato */
+        .service-sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--sombra-card);
+            height: fit-content;
+            position: sticky;
+            top: 30px;
+        }
+        
+        .sidebar-title {
+            font-size: 1.5rem;
+            color: var(--azul-profundo);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .contact-method {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: #F3E5F5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--azul-profundo);
+            font-size: 1.1rem;
+        }
+        
+        /* Seção Técnica */
+        .tech-specs {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--sombra-card);
+            margin-bottom: 60px;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .spec-card {
+            border-left: 4px solid var(--verde-esmeralda);
+            padding-left: 20px;
+        }
+        
+        .spec-card h3 {
+            color: var(--azul-profundo);
+            margin-bottom: 10px;
+        }
+        
+        /* CTA Section */
+        .service-cta {
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .btn-primary {
+            background: var(--verde-esmeralda);
+            color: white;
+            box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(156, 39, 176, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--azul-profundo);
+            border: 2px solid var(--azul-profundo);
+        }
+        
+        .btn-secondary:hover {
+            background: #F3E5F5;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .service-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-sidebar {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .service-title {
+                font-size: 2.2rem;
+            }
+            
+            .service-hero {
+                padding: 40px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="service-hero">
+        <div class="service-container">
+            <h1 class="service-title">
+                <i class="fas fa-flask"></i> Avaliação Química do Ambiente de Trabalho
+            </h1>
+            <p class="service-subtitle">
+                Verificação da presença e concentração de substâncias químicas no ambiente de trabalho 
+                para garantir a segurança e saúde dos trabalhadores conforme normas regulamentadoras.
+            </p>
+        </div>
+    </section>
+
+    <div class="service-container">
+        <!-- Conteúdo Principal -->
+        <div class="service-content">
+            <div class="service-details">
+                <h2>Monitoramento de Agentes Químicos</h2>
+                <p>
+                    Avaliação completa da exposição ocupacional a agentes químicos, atendendo às 
+                    exigências da NR-15, NHO-07 da FUNDACENTRO e demais regulamentações:
+                </p>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div>
+                            <h3>Amostragem e Análise</h3>
+                            <p>
+                                Coleta de amostras ambientais com métodos NIOSH, OSHA e AIHA para 
+                                determinação de contaminantes químicos no ar.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div>
+                            <h3>Avaliação de Exposição</h3>
+                            <p>
+                                Comparação dos resultados com os limites de tolerância (LT) da NR-15 
+                                e valores de referência internacionais (ACGIH, OSHA).
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <div>
+                            <h3>Laudo Técnico</h3>
+                            <p>
+                                Emissão de relatórios detalhados com interpretação dos resultados e 
+                                recomendações para controle de exposição.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Nossa Metodologia</h2>
+                <p>
+                    Processo completo para avaliação de risco químico:
+                </p>
+                <ol style="margin: 20px 0 20px 40px;">
+                    <li>Reconhecimento prévio dos agentes químicos presentes</li>
+                    <li>Planejamento estratégico dos pontos de amostragem</li>
+                    <li>Coleta com equipamentos calibrados (bombas, tubos, filtros)</li>
+                    <li>Análise em laboratório acreditado (ISO/IEC 17025)</li>
+                    <li>Interpretação dos resultados e recomendações técnicas</li>
+                </ol>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="service-sidebar">
+                <h3 class="sidebar-title">Informações Técnicas</h3>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <div>
+                        <strong>Parâmetros</strong>
+                        <p>+100 compostos químicos analisados</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <div>
+                        <strong>Normas</strong>
+                        <p>NR-15, NHO-07, OSHA, NIOSH</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <strong>Prazos</strong>
+                        <p>Resultados em 5-7 dias úteis</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div>
+                        <strong>Certificação</strong>
+                        <p>Laboratório acreditado pelo INMETRO</p>
+                    </div>
+                </div>
+                
+                <a href="pdfs/avaliacao-quimica-trabalho.pdf" download class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 30px;">
+                    <i class="fas fa-download"></i> Normas Completas
+                </a>
+            </aside>
+        </div>
+
+        <!-- Especificações Técnicas -->
+        <section class="tech-specs">
+            <h2>Agentes Químicos Monitorados</h2>
+            <p>Principais substâncias analisadas em ambientes ocupacionais:</p>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h3><i class="fas fa-wind"></i> Aerodispersóides</h3>
+                    <p>Poeiras, fumos, névoas, fibras (amianto, sílica)</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-flask"></i> Orgânicos Voláteis</h3>
+                    <p>Benzeno, tolueno, xilenos, solventes</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-biohazard"></i> Metais Pesados</h3>
+                    <p>Chumbo, mercúrio, cádmio, manganês</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-smog"></i> Gases e Vapores</h3>
+                    <p>CO, CO₂, NOx, SO₂, ácidos</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <div class="service-cta">
+            <a href="index.html#contact" class="btn btn-primary">
+                <i class="fas fa-calendar-check"></i> Agendar Avaliação
+            </a>
+            <a href="index.html#services" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Ver Outros Serviços
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emissões Atmosféricas | Água Pura Soluções Ambientais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --azul-profundo: #5D4037;  /* Marrom */
+            --verde-esmeralda: #8D6E63; /* Marrom claro */
+            --gradiente-azul: linear-gradient(135deg, #5D4037 0%, #8D6E63 100%);
+            --sombra-card: 0 10px 30px rgba(93, 64, 55, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        .service-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero do Serviço */
+        .service-hero {
+            background: var(--gradiente-azul);
+            color: white;
+            padding: 60px 0;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 50px;
+        }
+        
+        .service-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .service-subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            opacity: 0.9;
+        }
+        
+        /* Conteúdo Principal */
+        .service-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .service-details h2 {
+            font-size: 1.8rem;
+            color: var(--azul-profundo);
+            margin: 30px 0 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .service-details h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--verde-esmeralda);
+            border-radius: 2px;
+        }
+        
+        .feature-list {
+            margin: 25px 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        
+        .feature-icon {
+            color: var(--verde-esmeralda);
+            font-size: 1.3rem;
+            margin-top: 3px;
+        }
+        
+        /* Sidebar de Contato */
+        .service-sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--sombra-card);
+            height: fit-content;
+            position: sticky;
+            top: 30px;
+        }
+        
+        .sidebar-title {
+            font-size: 1.5rem;
+            color: var(--azul-profundo);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .contact-method {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: #EFEBE9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--azul-profundo);
+            font-size: 1.1rem;
+        }
+        
+        /* Seção Técnica */
+        .tech-specs {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--sombra-card);
+            margin-bottom: 60px;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .spec-card {
+            border-left: 4px solid var(--verde-esmeralda);
+            padding-left: 20px;
+        }
+        
+        .spec-card h3 {
+            color: var(--azul-profundo);
+            margin-bottom: 10px;
+        }
+        
+        /* CTA Section */
+        .service-cta {
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .btn-primary {
+            background: var(--verde-esmeralda);
+            color: white;
+            box-shadow: 0 5px 15px rgba(141, 110, 99, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(141, 110, 99, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--azul-profundo);
+            border: 2px solid var(--azul-profundo);
+        }
+        
+        .btn-secondary:hover {
+            background: #EFEBE9;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .service-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-sidebar {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .service-title {
+                font-size: 2.2rem;
+            }
+            
+            .service-hero {
+                padding: 40px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="service-hero">
+        <div class="service-container">
+            <h1 class="service-title">
+                <i class="fas fa-smog"></i> Emissões Atmosféricas
+            </h1>
+            <p class="service-subtitle">
+                Monitoramento e controle de emissões atmosféricas industriais, garantindo conformidade 
+                com as legislações CONAMA e demais regulamentações ambientais vigentes.
+            </p>
+        </div>
+    </section>
+
+    <div class="service-container">
+        <!-- Conteúdo Principal -->
+        <div class="service-content">
+            <div class="service-details">
+                <h2>Soluções Integradas</h2>
+                <p>
+                    Oferecemos serviços completos para monitoramento e controle de emissões atmosféricas 
+                    em processos industriais, atendendo às exigências da legislação ambiental:
+                </p>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div>
+                            <h3>Monitoramento Contínuo</h3>
+                            <p>
+                                Sistemas CEMS (Continuous Emissions Monitoring Systems) para medição em 
+                                tempo real de poluentes como SO₂, NOx, CO, material particulado e outros.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Inventário de Emissões</h3>
+                            <p>
+                                Elaboração de inventários detalhados conforme metodologias reconhecidas 
+                                (IPCC, USEPA) para licenciamento e relatórios ambientais.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                        <div>
+                            <h3>Sistemas de Controle</h3>
+                            <p>
+                                Projeto e avaliação de eficiência de sistemas de controle como filtros de 
+                                manga, precipitadores eletrostáticos e lavadores de gases.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Nossa Metodologia</h2>
+                <p>
+                    Processo certificado para garantia de resultados confiáveis:
+                </p>
+                <ol style="margin: 20px 0 20px 40px;">
+                    <li>Diagnóstico inicial das fontes emissoras</li>
+                    <li>Planejamento amostral conforme normas técnicas</li>
+                    <li>Coleta e análise por métodos referenciais</li>
+                    <li>Elaboração de relatórios técnicos detalhados</li>
+                    <li>Recomendações para adequação ambiental</li>
+                </ol>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="service-sidebar">
+                <h3 class="sidebar-title">Informações Técnicas</h3>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <div>
+                        <strong>Normas Atendidas</strong>
+                        <p>CONAMA 382/2006, CETESB, ABNT NBR</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div>
+                        <strong>Equipamentos</strong>
+                        <p>Analisadores portáteis e fixos certificados</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div>
+                        <strong>Certificações</strong>
+                        <p>Laboratório acreditado ISO 17025</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div>
+                        <strong>Áreas Atendidas</strong>
+                        <p>Todo território nacional</p>
+                    </div>
+                </div>
+                
+                <a href="pdfs/emissoes-atmosfericas.pdf" download class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 30px;">
+                    <i class="fas fa-download"></i> Normas Completas
+                </a>
+            </aside>
+        </div>
+
+        <!-- Especificações Técnicas -->
+        <section class="tech-specs">
+            <h2>Parâmetros Monitorados</h2>
+            <p>Análise dos principais poluentes atmosféricos:</p>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h3><i class="fas fa-wind"></i> Material Particulado</h3>
+                    <p>MP10, MP2.5 e emissões totais</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-cloud"></i> Gases</h3>
+                    <p>SO₂, NOx, CO, CO₂, O₃, HCl, HF</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-flask"></i> Metais Pesados</h3>
+                    <p>Chumbo, mercúrio, cádmio, arsênio</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-fire"></i> Compostos Orgânicos</h3>
+                    <p>VOCs, dioxinas, furanos, BTEX</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <div class="service-cta">
+            <a href="index.html#contact" class="btn btn-primary">
+                <i class="fas fa-calendar-check"></i> Agendar Monitoramento
+            </a>
+            <a href="index.html#services" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Ver Outros Serviços
+            </a>
+        </div>
+    </div>
+</body>
+</html>

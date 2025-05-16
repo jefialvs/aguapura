@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Efluentes | Água Pura Soluções Ambientais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --azul-profundo: #0f9aea;  /* Azul científico */
+            --verde-esmeralda: #00838f; /* Ciano */
+            --gradiente-azul: linear-gradient(135deg, #0277bd 0%, #00838f 100%);
+            --sombra-card: 0 10px 30px rgba(2, 119, 189, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        .service-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero do Serviço */
+        .service-hero {
+            background: var(--gradiente-azul);
+            color: white;
+            padding: 60px 0;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 50px;
+        }
+        
+        .service-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .service-subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            opacity: 0.9;
+        }
+        
+        /* Conteúdo Principal */
+        .service-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .service-details h2 {
+            font-size: 1.8rem;
+            color: var(--azul-profundo);
+            margin: 30px 0 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .service-details h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--verde-esmeralda);
+            border-radius: 2px;
+        }
+        
+        .feature-list {
+            margin: 25px 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        
+        .feature-icon {
+            color: var(--verde-esmeralda);
+            font-size: 1.3rem;
+            margin-top: 3px;
+        }
+        
+        /* Sidebar de Contato */
+        .service-sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--sombra-card);
+            height: fit-content;
+            position: sticky;
+            top: 30px;
+        }
+        
+        .sidebar-title {
+            font-size: 1.5rem;
+            color: var(--azul-profundo);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .contact-method {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: #e0f7fa;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--azul-profundo);
+            font-size: 1.1rem;
+        }
+        
+        /* Seção Técnica */
+        .tech-specs {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--sombra-card);
+            margin-bottom: 60px;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .spec-card {
+            border-left: 4px solid var(--verde-esmeralda);
+            padding-left: 20px;
+        }
+        
+        .spec-card h3 {
+            color: var(--azul-profundo);
+            margin-bottom: 10px;
+        }
+        
+        /* Tabela de Parâmetros */
+        .parameter-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+        
+        .parameter-table th, .parameter-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .parameter-table th {
+            background-color: #e0f7fa;
+            color: var(--azul-profundo);
+            font-weight: 600;
+        }
+        
+        .parameter-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        /* CTA Section */
+        .service-cta {
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .btn-primary {
+            background: var(--verde-esmeralda);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 131, 143, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 131, 143, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--azul-profundo);
+            border: 2px solid var(--azul-profundo);
+        }
+        
+        .btn-secondary:hover {
+            background: #e0f7fa;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .service-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-sidebar {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .service-title {
+                font-size: 2.2rem;
+            }
+            
+            .service-hero {
+                padding: 40px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+            
+            .parameter-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="service-hero">
+        <div class="service-container">
+            <h1 class="service-title">
+                <i class="fas fa-recycle"></i> Análise de Efluentes
+            </h1>
+            <p class="service-subtitle">
+                Soluções completas para caracterização de efluentes industriais e domésticos, 
+                atendendo à CONAMA 430 e demais legislações ambientais.
+            </p>
+        </div>
+    </section>
+
+    <div class="service-container">
+        <!-- Conteúdo Principal -->
+        <div class="service-content">
+            <div class="service-details">
+                <h2>Análises Completa de Efluentes</h2>
+                <p>
+                    Realizamos a caracterização físico-química, microbiológica e ecotoxicológica 
+                    de efluentes líquidos para atendimento às normas ambientais:
+                </p>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <div>
+                            <h3>Parâmetros Físico-Químicos</h3>
+                            <p>
+                                DBO, DQO, sólidos totais, óleos e graxas, metais pesados, pH, 
+                                condutividade, nitrogênio total, fósforo total e outros.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-bacteria"></i>
+                        </div>
+                        <div>
+                            <h3>Análises Microbiológicas</h3>
+                            <p>
+                                Coliformes termotolerantes, Escherichia coli, bactérias 
+                                heterotróficas e outros indicadores de contaminação.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-fish"></i>
+                        </div>
+                        <div>
+                            <h3>Ensaios Ecotoxicológicos</h3>
+                            <p>
+                                Testes com Daphnia similis e outras espécies indicadoras 
+                                para avaliação de toxicidade aguda.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Principais Parâmetros Analisados</h2>
+                <p>
+                    Nossos laudos atendem aos requisitos dos órgãos ambientais:
+                </p>
+                
+                <table class="parameter-table">
+                    <thead>
+                        <tr>
+                            <th>Parâmetro</th>
+                            <th>Método</th>
+                            <th>Legislação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>DBO (5 dias, 20°C)</strong></td>
+                            <td>5210 B</td>
+                            <td>CONAMA 430</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DQO</strong></td>
+                            <td>5220 B</td>
+                            <td>CONAMA 430</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sólidos Totais</strong></td>
+                            <td>2540 B</td>
+                            <td>CONAMA 430</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Óleos e Graxas</strong></td>
+                            <td>5520 B</td>
+                            <td>CONAMA 430</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Metais Pesados</strong></td>
+                            <td>3111 B / 3120 B</td>
+                            <td>CONAMA 430</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Coliformes Termotolerantes</strong></td>
+                            <td>9221 E</td>
+                            <td>CONAMA 430</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Nossa Metodologia</h2>
+                <p>
+                    Processo completo para garantir resultados confiáveis:
+                </p>
+                <ol style="margin: 20px 0 20px 40px;">
+                    <li>Orientação prévia para coleta representativa</li>
+                    <li>Coleta por amostradores homologados</li>
+                    <li>Preservação e transporte adequado</li>
+                    <li>Análise em laboratório acreditado (ISO/IEC 17025)</li>
+                    <li>Controle de qualidade com padrões certificados</li>
+                    <li>Emissão de laudo com parecer técnico</li>
+                </ol>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="service-sidebar">
+                <h3 class="sidebar-title">Informações Técnicas</h3>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div>
+                        <strong>Tipos de Efluentes</strong>
+                        <p>Industriais, domésticos, sanitários, pluviais</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <strong>Prazos</strong>
+                        <p>DBO: 5 dias | DQO: 3 dias | Microbiológico: 48h</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div>
+                        <strong>Documentação</strong>
+                        <p>Laudos para licenciamento ambiental</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div>
+                        <strong>Área de Atuação</strong>
+                        <p>Todo território nacional</p>
+                    </div>
+                </div>
+                
+                <a href="pdfs/conama-430.pdf" download class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 30px;">
+                    <i class="fas fa-download"></i> CONAMA 430
+                </a>
+            </aside>
+        </div>
+
+        <!-- Especificações Técnicas -->
+        <section class="tech-specs">
+            <h2>Aplicações das Análises</h2>
+            <p>Nossos serviços atendem diversas necessidades ambientais e industriais:</p>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h3><i class="fas fa-building"></i> Licenciamento Ambiental</h3>
+                    <p>Atendimento a exigências do órgão ambiental</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-chart-line"></i> Monitoramento Contínuo</h3>
+                    <p>Programas de controle de qualidade de efluentes</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-tools"></i> Estudos de Tratabilidade</h3>
+                    <p>Caracterização para dimensionamento de ETE</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-gavel"></i> Fiscalização Ambiental</h3>
+                    <p>Laudos para defesa em processos administrativos</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <div class="service-cta">
+            <a href="index.html#contact" class="btn btn-primary">
+                <i class="fas fa-vial"></i> Solicitar Análise
+            </a>
+            <a href="index.html#services" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Ver Outros Serviços
+            </a>
+        </div>
+    </div>
+</body>
+</html>

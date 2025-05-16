@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Metais | Água Pura Soluções Ambientais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --azul-profundo: #3e4143;  /* Azul científico */
+            --verde-esmeralda: #00838fda; /* Ciano */
+            --gradiente-azul: linear-gradient(135deg, #535353 0%, #a4f7ff 100%);
+            --sombra-card: 0 10px 30px rgba(2, 119, 189, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        .service-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero do Serviço */
+        .service-hero {
+            background: var(--gradiente-azul);
+            color: white;
+            padding: 60px 0;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 50px;
+        }
+        
+        .service-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .service-subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            opacity: 0.9;
+        }
+        
+        /* Conteúdo Principal */
+        .service-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .service-details h2 {
+            font-size: 1.8rem;
+            color: var(--azul-profundo);
+            margin: 30px 0 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .service-details h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--verde-esmeralda);
+            border-radius: 2px;
+        }
+        
+        .feature-list {
+            margin: 25px 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        
+        .feature-icon {
+            color: var(--verde-esmeralda);
+            font-size: 1.3rem;
+            margin-top: 3px;
+        }
+        
+        /* Sidebar de Contato */
+        .service-sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--sombra-card);
+            height: fit-content;
+            position: sticky;
+            top: 30px;
+        }
+        
+        .sidebar-title {
+            font-size: 1.5rem;
+            color: var(--azul-profundo);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .contact-method {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: #e0f7fa;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--azul-profundo);
+            font-size: 1.1rem;
+        }
+        
+        /* Seção Técnica */
+        .tech-specs {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--sombra-card);
+            margin-bottom: 60px;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .spec-card {
+            border-left: 4px solid var(--verde-esmeralda);
+            padding-left: 20px;
+        }
+        
+        .spec-card h3 {
+            color: var(--azul-profundo);
+            margin-bottom: 10px;
+        }
+        
+        /* Tabela de Metais */
+        .metal-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+        
+        .metal-table th, .metal-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .metal-table th {
+            background-color: #e0f7fa;
+            color: var(--azul-profundo);
+            font-weight: 600;
+        }
+        
+        .metal-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        /* CTA Section */
+        .service-cta {
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .btn-primary {
+            background: var(--verde-esmeralda);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 131, 143, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 131, 143, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--azul-profundo);
+            border: 2px solid var(--azul-profundo);
+        }
+        
+        .btn-secondary:hover {
+            background: #e0f7fa;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .service-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-sidebar {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .service-title {
+                font-size: 2.2rem;
+            }
+            
+            .service-hero {
+                padding: 40px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+            
+            .metal-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="service-hero">
+        <div class="service-container">
+            <h1 class="service-title">
+                <i class="fas fa-atom"></i> Análise de Metais
+            </h1>
+            <p class="service-subtitle">
+                Identificação e quantificação precisa de metais em água, solo, alimentos e materiais diversos 
+                através de técnicas analíticas avançadas.
+            </p>
+        </div>
+    </section>
+
+    <div class="service-container">
+        <!-- Conteúdo Principal -->
+        <div class="service-content">
+            <div class="service-details">
+                <h2>Análise de Metais Pesados e Essenciais</h2>
+                <p>
+                    Realizamos a detecção e quantificação de metais com equipamentos de alta precisão, 
+                    atendendo aos padrões nacionais e internacionais de qualidade:
+                </p>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-flask-vial"></i>
+                        </div>
+                        <div>
+                            <h3>Espectrometria de Absorção Atômica (EAA)</h3>
+                            <p>
+                                Método altamente sensível para determinação de metais em baixas concentrações, 
+                                com detecção em partes por bilhão (ppb).
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-magnet"></i>
+                        </div>
+                        <div>
+                            <h3>ICP-OES (Espectrometria de Emissão Óptica)</h3>
+                            <p>
+                                Técnica multi-elementar que permite a análise simultânea de diversos metais 
+                                com alta precisão e baixos limites de detecção.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Metais Analisados</h2>
+                <p>
+                    Detectamos e quantificamos os principais metais de interesse ambiental e toxicológico:
+                </p>
+                
+                <table class="metal-table">
+                    <thead>
+                        <tr>
+                            <th>Metal</th>
+                            <th>Aplicações</th>
+                            <th>Limite de Detecção</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Chumbo (Pb)</strong></td>
+                            <td>Água potável, tintas, solo</td>
+                            <td>0,5 ppb</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mercúrio (Hg)</strong></td>
+                            <td>Peixes, produtos odontológicos</td>
+                            <td>0,1 ppb</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Arsênio (As)</strong></td>
+                            <td>Água subterrânea, alimentos</td>
+                            <td>1,0 ppb</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cádmio (Cd)</strong></td>
+                            <td>Baterias, produtos agrícolas</td>
+                            <td>0,2 ppb</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cromo (Cr)</strong></td>
+                            <td>Couro, efluentes industriais</td>
+                            <td>0,5 ppb</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Níquel (Ni)</strong></td>
+                            <td>Joias, ligas metálicas</td>
+                            <td>1,0 ppb</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Nossa Metodologia</h2>
+                <p>
+                    Processo certificado para máxima confiabilidade nos resultados:
+                </p>
+                <ol style="margin: 20px 0 20px 40px;">
+                    <li>Coleta por profissionais especializados</li>
+                    <li>Preservação adequada das amostras</li>
+                    <li>Preparação em câmara de fluxo laminar</li>
+                    <li>Análise em equipamentos calibrados</li>
+                    <li>Controle de qualidade com padrões certificados</li>
+                    <li>Emissão de laudo com interpretação técnica</li>
+                </ol>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="service-sidebar">
+                <h3 class="sidebar-title">Informações Técnicas</h3>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <div>
+                        <strong>Amostragem</strong>
+                        <p>Coletamos ou recebemos amostras de diversos materiais</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <strong>Prazo</strong>
+                        <p>Resultados em 3-5 dias úteis</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div>
+                        <strong>Certificação</strong>
+                        <p>Laudos com validade legal (ISO 17025)</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div>
+                        <strong>Matrizes Analisadas</strong>
+                        <p>Água, solo, alimentos, produtos industriais</p>
+                    </div>
+                </div>
+                
+                <a href="pdfs/limites-metais.pdf" download class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 30px;">
+                    <i class="fas fa-download"></i> Tabela de Referência
+                </a>
+            </aside>
+        </div>
+
+        <!-- Especificações Técnicas -->
+        <section class="tech-specs">
+            <h2>Aplicações da Análise de Metais</h2>
+            <p>Nossos serviços atendem diversas necessidades industriais e ambientais:</p>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h3><i class="fas fa-industry"></i> Controle Ambiental</h3>
+                    <p>Monitoramento de efluentes, resíduos e áreas contaminadas</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-utensils"></i> Segurança Alimentar</h3>
+                    <p>Análise em pescados, grãos e produtos agrícolas</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-tint"></i> Potabilidade</h3>
+                    <p>Verificação de metais em água para consumo humano</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-flask"></i> Pesquisa Científica</h3>
+                    <p>Suporte a projetos acadêmicos e inovação</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <div class="service-cta">
+            <a href="index.html#contact" class="btn btn-primary">
+                <i class="fas fa-vial"></i> Solicitar Análise
+            </a>
+            <a href="index.html#services" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Ver Outros Serviços
+            </a>
+        </div>
+    </div>
+</body>
+</html>

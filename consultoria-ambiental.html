@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoria Ambiental | Água Pura Soluções Ambientais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --azul-profundo: #6a1b9a;  /* Roxo */
+            --verde-esmeralda: #9c27b0; /* Roxo claro */
+            --gradiente-azul: linear-gradient(135deg, #6a1b9a 0%, #4527a0 100%);
+            --sombra-card: 0 10px 30px rgba(106, 27, 154, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        .service-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero do Serviço */
+        .service-hero {
+            background: var(--gradiente-azul);
+            color: white;
+            padding: 60px 0;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 50px;
+        }
+        
+        .service-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .service-subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            opacity: 0.9;
+        }
+        
+        /* Conteúdo Principal */
+        .service-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .service-details h2 {
+            font-size: 1.8rem;
+            color: var(--azul-profundo);
+            margin: 30px 0 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .service-details h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--verde-esmeralda);
+            border-radius: 2px;
+        }
+        
+        .feature-list {
+            margin: 25px 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        
+        .feature-icon {
+            color: var(--verde-esmeralda);
+            font-size: 1.3rem;
+            margin-top: 3px;
+        }
+        
+        /* Sidebar de Contato */
+        .service-sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--sombra-card);
+            height: fit-content;
+            position: sticky;
+            top: 30px;
+        }
+        
+        .sidebar-title {
+            font-size: 1.5rem;
+            color: var(--azul-profundo);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .contact-method {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: #f3e5f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--azul-profundo);
+            font-size: 1.1rem;
+        }
+        
+        /* Seção Técnica */
+        .tech-specs {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--sombra-card);
+            margin-bottom: 60px;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .spec-card {
+            border-left: 4px solid var(--verde-esmeralda);
+            padding-left: 20px;
+        }
+        
+        .spec-card h3 {
+            color: var(--azul-profundo);
+            margin-bottom: 10px;
+        }
+        
+        /* CTA Section */
+        .service-cta {
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .btn-primary {
+            background: var(--verde-esmeralda);
+            color: white;
+            box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(156, 39, 176, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--azul-profundo);
+            border: 2px solid var(--azul-profundo);
+        }
+        
+        .btn-secondary:hover {
+            background: #f3e5f5;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .service-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-sidebar {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .service-title {
+                font-size: 2.2rem;
+            }
+            
+            .service-hero {
+                padding: 40px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="service-hero">
+        <div class="service-container">
+            <h1 class="service-title">
+                <i class="fas fa-leaf"></i> Consultoria Ambiental
+            </h1>
+            <p class="service-subtitle">
+                Assessoria especializada em compliance ambiental e sustentabilidade corporativa, 
+                garantindo conformidade com as legislações federal, estadual e municipal.
+            </p>
+        </div>
+    </section>
+
+    <div class="service-container">
+        <!-- Conteúdo Principal -->
+        <div class="service-content">
+            <div class="service-details">
+                <h2>Soluções Estratégicas</h2>
+                <p>
+                    Atuamos em todo o território nacional com consultores ambientais certificados, 
+                    oferecendo soluções personalizadas para diversos segmentos:
+                </p>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <div>
+                            <h3>Licenciamento Ambiental</h3>
+                            <p>
+                                Elaboração de LAU, LO, LP e estudos ambientais (EIA/RIMA, PCA, RAS) 
+                                com alta taxa de aprovação nos órgãos competentes.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div>
+                            <h3>Diagnósticos Completo</h3>
+                            <p>
+                                Due diligence ambiental, avaliação de passivos e auditorias 
+                                para compliance com as normas ISO 14001.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Nossa Metodologia</h2>
+                <p>
+                    Processo certificado que garante resultados efetivos:
+                </p>
+                <ol style="margin: 20px 0 20px 40px;">
+                    <li>Diagnóstico inicial gratuito</li>
+                    <li>Plano de ação personalizado</li>
+                    <li>Implantação com acompanhamento técnico</li>
+                    <li>Monitoramento contínuo</li>
+                </ol>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="service-sidebar">
+                <h3 class="sidebar-title">Nossos Consultores</h3>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div>
+                        <strong>Equipe Qualificada</strong>
+                        <p>Engenheiros ambientais e biólogos com CREA/CRBio ativo</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div>
+                        <strong>Atendemos</strong>
+                        <p>Todas as regiões do Brasil</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div>
+                        <strong>Certificações</strong>
+                        <p>ISO 14001 e OHSAS 18001</p>
+                    </div>
+                </div>
+                
+                <a href="pdfs/consultoria-ambiental.pdf" download class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 30px;">
+                    <i class="fas fa-download"></i> Portfólio Completo
+                </a>
+            </aside>
+        </div>
+
+        <!-- Especificações Técnicas -->
+        <section class="tech-specs">
+            <h2>Áreas de Atuação</h2>
+            <p>Serviços especializados para diversos segmentos:</p>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h3><i class="fas fa-industry"></i> Industrial</h3>
+                    <p>Licenciamento, outorgas e estudos de impacto</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-building"></i> Construção Civil</h3>
+                    <p>Regularização de empreendimentos</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-tractor"></i> Agronegócio</h3>
+                    <p>Regularização ambiental rural (CAR, PRA)</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-bolt"></i> Energia</h3>
+                    <p>Projetos de energia renovável</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <div class="service-cta">
+            <a href="index.html#contact" class="btn btn-primary">
+                <i class="fas fa-calendar-check"></i> Agendar Consultoria
+            </a>
+            <a href="index.html#services" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Ver Outros Serviços
+            </a>
+        </div>
+    </div>
+</body>
+</html>

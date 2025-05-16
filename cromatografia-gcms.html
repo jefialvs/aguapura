@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cromatografia Gasosa (GC-MS) | Água Pura Soluções Ambientais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --azul-profundo: #1565C0;  /* Azul científico */
+            --verde-esmeralda: #00838F; /* Ciano */
+            --gradiente-azul: linear-gradient(135deg, #1565C0 0%, #00838F 100%);
+            --sombra-card: 0 10px 30px rgba(21, 101, 192, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        .service-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero do Serviço */
+        .service-hero {
+            background: var(--gradiente-azul);
+            color: white;
+            padding: 60px 0;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 50px;
+        }
+        
+        .service-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .service-subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            opacity: 0.9;
+        }
+        
+        /* Conteúdo Principal */
+        .service-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .service-details h2 {
+            font-size: 1.8rem;
+            color: var(--azul-profundo);
+            margin: 30px 0 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .service-details h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--verde-esmeralda);
+            border-radius: 2px;
+        }
+        
+        .feature-list {
+            margin: 25px 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        
+        .feature-icon {
+            color: var(--verde-esmeralda);
+            font-size: 1.3rem;
+            margin-top: 3px;
+        }
+        
+        /* Sidebar de Contato */
+        .service-sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--sombra-card);
+            height: fit-content;
+            position: sticky;
+            top: 30px;
+        }
+        
+        .sidebar-title {
+            font-size: 1.5rem;
+            color: var(--azul-profundo);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .contact-method {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: #E0F7FA;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--azul-profundo);
+            font-size: 1.1rem;
+        }
+        
+        /* Seção Técnica */
+        .tech-specs {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--sombra-card);
+            margin-bottom: 60px;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .spec-card {
+            border-left: 4px solid var(--verde-esmeralda);
+            padding-left: 20px;
+        }
+        
+        .spec-card h3 {
+            color: var(--azul-profundo);
+            margin-bottom: 10px;
+        }
+        
+        /* CTA Section */
+        .service-cta {
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .btn-primary {
+            background: var(--verde-esmeralda);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 131, 143, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 131, 143, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--azul-profundo);
+            border: 2px solid var(--azul-profundo);
+        }
+        
+        .btn-secondary:hover {
+            background: #E0F7FA;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .service-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-sidebar {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .service-title {
+                font-size: 2.2rem;
+            }
+            
+            .service-hero {
+                padding: 40px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="service-hero">
+        <div class="service-container">
+            <h1 class="service-title">
+                <i class="fas fa-atom"></i> Cromatografia Gasosa (GC-MS)
+            </h1>
+            <p class="service-subtitle">
+                A cromatografia gasosa acoplada à espectrometria de massa (GC-MS) é uma técnica analítica que separa e identifica compostos químicos em uma amostra. Análise de Compostos Orgânicos Voláteis e Semivoláteis.
+            </p>
+        </div>
+    </section>
+
+    <div class="service-container">
+        <!-- Conteúdo Principal -->
+        <div class="service-content">
+            <div class="service-details">
+                <h2>Tecnologia Avançada</h2>
+                <p>
+                    Nossos equipamentos de última geração permitem a identificação precisa de compostos em concentrações extremamente baixas (até ppb):
+                </p>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <div>
+                            <h3>Separação por GC</h3>
+                            <p>
+                                Separação dos compostos em coluna capilar com fase estacionária de alta resolução, utilizando gradiente de temperatura controlado.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h3>Identificação por MS</h3>
+                            <p>
+                                Detecção por espectrometria de massa com ionização por impacto eletrônico (EI), comparando espectros com bancos de dados NIST e Wiley.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Sensibilidade</h3>
+                            <p>
+                                Limite de detecção de 0.1 μg/L para maioria dos compostos, com faixa linear de até 6 ordens de grandeza.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Nossa Metodologia</h2>
+                <p>
+                    Processo completo para análises confiáveis:
+                </p>
+                <ol style="margin: 20px 0 20px 40px;">
+                    <li>Preparação de amostra (extração SPME, purge-and-trap ou diluição direta)</li>
+                    <li>Injeção em modo split/splitless com autosampler</li>
+                    <li>Separação cromatográfica (30-60 min por análise)</li>
+                    <li>Aquisição de espectros de massa (70eV, m/z 35-500)</li>
+                    <li>Processamento de dados e emissão de laudo</li>
+                </ol>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="service-sidebar">
+                <h3 class="sidebar-title">Informações Técnicas</h3>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div>
+                        <strong>Equipamento</strong>
+                        <p>GC-MS Shimadzu QP2020 NX</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div>
+                        <strong>Biblioteca</strong>
+                        <p>NIST 2020 (250,000 espectros)</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <div>
+                        <strong>Normas</strong>
+                        <p>EPA 8260, ASTM D1946, ISO 6974</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div>
+                        <strong>Controle</strong>
+                        <p>Padrões certificados NIST/ERA</p>
+                    </div>
+                </div>
+                
+                <a href="pdfs/cromatografia-gcms.pdf" download class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 30px;">
+                    <i class="fas fa-download"></i> Protocolos Completos
+                </a>
+            </aside>
+        </div>
+
+        <!-- Especificações Técnicas -->
+        <section class="tech-specs">
+            <h2>Aplicações da GC-MS</h2>
+            <p>Principais análises realizadas:</p>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h3><i class="fas fa-tint"></i> Água e Efluentes</h3>
+                    <p>BTEX, hidrocarbonetos, pesticidas</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-industry"></i> Ar e Emissões</h3>
+                    <p>VOCs, SVOCs, dioxinas</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-pills"></i> Farmacêutica</h3>
+                    <p>Resíduos de solventes, impurezas</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-wine-bottle"></i> Alimentos</h3>
+                    <p>Aromas, contaminantes, adulterantes</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <div class="service-cta">
+            <a href="index.html#contact" class="btn btn-primary">
+                <i class="fas fa-vial"></i> Solicitar Análise
+            </a>
+            <a href="index.html#services" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Ver Outros Serviços
+            </a>
+        </div>
+    </div>
+</body>
+</html>

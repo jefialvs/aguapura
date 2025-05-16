@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise Preditiva de Óleo | Soluções em Energia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --azul-profundo: #0d47a1;  /* Azul mais escuro para energia */
+            --laranja-energia: #ff6d00; /* Laranja para destaque */
+            --gradiente-azul: linear-gradient(135deg, #0d47a1 0%, #1e88e5 100%);
+            --sombra-card: 0 10px 30px rgba(13, 71, 161, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        .service-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero do Serviço */
+        .service-hero {
+            background: var(--gradiente-azul);
+            color: white;
+            padding: 60px 0;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 50px;
+        }
+        
+        .service-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .service-subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            opacity: 0.9;
+        }
+        
+        /* Conteúdo Principal */
+        .service-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .service-details h2 {
+            font-size: 1.8rem;
+            color: var(--azul-profundo);
+            margin: 30px 0 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .service-details h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--laranja-energia);
+            border-radius: 2px;
+        }
+        
+        .feature-list {
+            margin: 25px 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        
+        .feature-icon {
+            color: var(--laranja-energia);
+            font-size: 1.3rem;
+            margin-top: 3px;
+        }
+        
+        /* Sidebar de Contato */
+        .service-sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--sombra-card);
+            height: fit-content;
+            position: sticky;
+            top: 30px;
+        }
+        
+        .sidebar-title {
+            font-size: 1.5rem;
+            color: var(--azul-profundo);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .contact-method {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: #e3f2fd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--azul-profundo);
+            font-size: 1.1rem;
+        }
+        
+        /* Seção Técnica */
+        .tech-specs {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--sombra-card);
+            margin-bottom: 60px;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .spec-card {
+            border-left: 4px solid var(--laranja-energia);
+            padding-left: 20px;
+        }
+        
+        .spec-card h3 {
+            color: var(--azul-profundo);
+            margin-bottom: 10px;
+        }
+        
+        /* CTA Section */
+        .service-cta {
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .btn-primary {
+            background: var(--laranja-energia);
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 109, 0, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 109, 0, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--azul-profundo);
+            border: 2px solid var(--azul-profundo);
+        }
+        
+        .btn-secondary:hover {
+            background: #e3f2fd;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .service-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-sidebar {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .service-title {
+                font-size: 2.2rem;
+            }
+            
+            .service-hero {
+                padding: 40px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="service-hero">
+        <div class="service-container">
+            <h1 class="service-title">
+                <i class="fas fa-oil-can"></i> Análise Preditiva de Óleo
+            </h1>
+            <p class="service-subtitle">
+                Soluções avançadas em machine learning para prever falhas em equipamentos, 
+                otimizar manutenção e reduzir custos operacionais na indústria de petróleo e gás.
+            </p>
+        </div>
+    </section>
+
+    <div class="service-container">
+        <!-- Conteúdo Principal -->
+        <div class="service-content">
+            <div class="service-details">
+                <h2>Tecnologia Avançada</h2>
+                <p>
+                    Nossas soluções combinam IoT, Big Data e Inteligência Artificial para transformar 
+                    dados operacionais em insights acionáveis:
+                </p>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div>
+                            <h3>Modelos Preditivos</h3>
+                            <p>
+                                Algoritmos de machine learning (XGBoost, LSTM, Random Forest) treinados 
+                                para prever falhas em bombas, compressores e turbinas com até 95% de acurácia.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h3>Monitoramento em Tempo Real</h3>
+                            <p>
+                                Plataforma integrada que analisa vibração, temperatura, pressão e 
+                                qualidade do óleo 24/7, com alertas automáticos para anomalias.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div>
+                            <h3>Análise de Óleo Lubrificante</h3>
+                            <p>
+                                Diagnóstico da condição de máquinas através de espectrometria FTIR, 
+                                contagem de partículas e análise de desgaste de metais.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Nossa Metodologia</h2>
+                <p>
+                    Processo completo para implementação de análise preditiva:
+                </p>
+                <ol style="margin: 20px 0 20px 40px;">
+                    <li>Coleta e integração de dados históricos e em tempo real</li>
+                    <li>Pré-processamento e engenharia de features</li>
+                    <li>Treinamento e validação de modelos preditivos</li>
+                    <li>Implantação em produção com monitoramento contínuo</li>
+                    <li>Atualização periódica dos modelos com novos dados</li>
+                </ol>
+                
+                <h2>Benefícios</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div>
+                            <h3>Redução de Custos</h3>
+                            <p>
+                                Diminuição em até 40% dos gastos com manutenção não planejada e 
+                                aumento de 25% na vida útil dos equipamentos.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Minimização de Paradas</h3>
+                            <p>
+                                Antecipação de falhas críticas com até 30 dias de antecedência, 
+                                permitindo planejamento otimizado de manutenções.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="service-sidebar">
+                <h3 class="sidebar-title">Informações Técnicas</h3>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div>
+                        <strong>Integração</strong>
+                        <p>Compatível com SCADA, PI System e SAP</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div>
+                        <strong>Precisão</strong>
+                        <p>Modelos com acurácia >90%</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <strong>Segurança</strong>
+                        <p>Dados criptografados em nuvem privada</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div>
+                        <strong>Aplicações</strong>
+                        <p>Refinarias, plataformas, oleodutos</p>
+                    </div>
+                </div>
+                
+                <a href="pdfs/analise-preditiva-oleo.pdf" download class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 30px;">
+                    <i class="fas fa-download"></i> Case de Sucesso
+                </a>
+            </aside>
+        </div>
+
+        <!-- Especificações Técnicas -->
+        <section class="tech-specs">
+            <h2>Aplicações na Indústria</h2>
+            <p>Soluções personalizadas para diferentes necessidades:</p>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h3><i class="fas fa-pump-soap"></i> Bombas e Compressores</h3>
+                    <p>Detecção de cavitação, desbalanceamento e desalinhamento</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-fire"></i> Turbinas a Gás</h3>
+                    <p>Monitoramento de degradação de pás e anéis</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-pipe"></i> Sistemas de Tubulação</h3>
+                    <p>Previsão de corrosão e deposição de parafina</p>
+                </div>
+                
+                <div class="spec-card">
+                    <h3><i class="fas fa-oil-well"></i> Equipamentos de Perfuração</h3>
+                    <p>Análise de desgaste em componentes críticos</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <div class="service-cta">
+            <a href="index.html#contact" class="btn btn-primary">
+                <i class="fas fa-chart-bar"></i> Solicitar Demonstração
+            </a>
+            <a href="index.html#services" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Ver Outros Serviços
+            </a>
+        </div>
+    </div>
+</body>
+</html>
